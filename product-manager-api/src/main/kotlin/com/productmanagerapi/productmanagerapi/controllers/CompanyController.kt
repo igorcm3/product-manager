@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/companies")
-class CompanyController(var companyService: CompanyService) {
+class CompanyController(val companyService: CompanyService) {
 
     @GetMapping("/list")
     fun listCompanies(pageable: Pageable): Page<CompanyDTOResponse> = this.companyService.listCompanies(pageable)
